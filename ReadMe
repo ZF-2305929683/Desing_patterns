@@ -1,2 +1,36 @@
+设计模式的六大原则：
+    开闭原则：对扩展开放，对修改关闭。当需要扩展程序的时候不应该去修改源代码。
+    这样程序扩展性较强，且易于维护与升级。
+
+    里氏代换原则：任何基类可以出现的地方，子类一定可以出现。(不太懂为什么)
+
+    依赖倒转原则：针对接口编程，依赖于抽象而不依赖于具体。
+        示例：
+            class father{
+                virtual void func() = 0;
+            };
+
+            class son1 :public father{
+                void func() override{/*do something*/}
+            };
+
+            class son2 :public father{
+                void func() override{/*do something*/}
+            };
+
+            class Do{
+                private:
+                    father* fa;
+                public:
+                    void Do(){
+                        fa->func();
+                    }
+            };
+    
+
+    接口隔离原则：使用多个隔离的接口，比使用单个接口要好，降低类之间的耦合度。
+
+
+
 碰到的问题：
     注意静态对象重定义行为。
